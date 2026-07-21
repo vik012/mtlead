@@ -1,35 +1,47 @@
-// Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+    anchor.addEventListener('click', function (event) {
+        const targetId = this.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+
+        const target = document.querySelector(targetId);
+        if (!target) return;
+
+        event.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 });
 
-// Add scroll animation for elements
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
         }
     });
-}, observerOptions);
-
-document.querySelectorAll('.feature-card, .contact-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-    observer.observe(el);
+}, {
+    threshold: 0.16,
+    rootMargin: '0px 0px -40px 0px'
 });
+
+document.querySelectorAll('.reveal').forEach((item) => {
+    observer.observe(item);
+});
+
+// Hero video: autoplay when visible and allowed
+const heroVideo = document.getElementById('heroVideo');
+if (heroVideo) {
+    const vidObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                // try play (muted autoplay should work)
+                heroVideo.play().catch(() => {});
+            } else {
+                heroVideo.pause();
+            }
+        });
+    }, { threshold: 0.5 });
+    vidObserver.observe(heroVideo);
+}
+
+// Lottie: if lottie-player isn't loaded from CDN the element will be ignored
+// No-op here; the <lottie-player> will autoplay if available.
