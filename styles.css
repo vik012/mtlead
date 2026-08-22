@@ -139,3 +139,44 @@ body{font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, 
     .situations-grid{grid-template-columns:1fr}
     .section-heading-centered h2{font-size:22px}
 }
+
+/* Conversion / Transformation section (below problem) */
+.conversion-section{padding:96px 0;background:var(--bg)}
+.conversion-section .how-label{margin-bottom:14px}
+.conversion-section .how-heading{max-width:980px;margin:0 auto 18px;text-align:center}
+.conversion-section .how-heading h2{font-size:30px}
+.conversion-section .how-lead{color:var(--muted);max-width:72ch;margin:8px auto 0;font-size:1.03rem}
+
+.conversion-wrap{position:relative;margin-top:36px;padding:30px 6px}
+.conversion-lines{position:absolute;left:0;right:0;top:64px;height:72px;pointer-events:none}
+.conversion-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;align-items:stretch;position:relative;z-index:2}
+.conversion-step{display:flex}
+.incoming-call .call-top{font-weight:800;color:#071033;margin-bottom:8px}
+.incoming-call .call-line{color:var(--muted);margin-bottom:10px}
+.incoming-call .call-meta{font-size:13px;color:var(--muted)}
+
+.ai-mini{display:flex;flex-direction:column;gap:8px}
+.ai-mini .ai-badge{display:inline-block;padding:6px 8px;border-radius:8px;border:1px solid var(--border);font-weight:700;font-size:12px;color:var(--muted)}
+.ai-mini .ai-text{color:var(--muted);font-weight:700}
+
+.conv-mini{display:flex;flex-direction:column;gap:8px}
+.conv-mini .bubble{padding:10px 12px;border-radius:10px;border:1px solid var(--border);font-size:0.97rem}
+
+.calendar-mini{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.calendar-mini .cal-day{font-weight:800;color:#071033;font-size:16px}
+.calendar-mini .cal-time{font-weight:800;color:var(--accent);font-size:18px}
+.calendar-mini .cal-confirm{color:var(--muted);font-weight:700}
+
+.conversion-transition{text-align:center;margin-top:32px;font-weight:700;color:#071033}
+
+@media (max-width:1000px){
+    .conversion-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media (max-width:640px){
+    .conversion-section{padding:40px 0}
+    .conversion-heading h2{font-size:20px}
+    .conversion-grid{grid-template-columns:1fr;gap:18px}
+    .conversion-wrap{padding:8px}
+    .conversion-lines{display:none}
+}
