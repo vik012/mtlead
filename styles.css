@@ -75,6 +75,49 @@ body{font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, 
 
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 
+/* How it works section */
+.how-section{padding:84px 0;background:var(--bg)}
+.how-label{font-size:12px;font-weight:700;letter-spacing:0.18em;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+.how-heading{max-width:900px;margin:0 auto 20px;text-align:center}
+.how-heading h2{font-size:28px;margin:0;color:#071033;font-weight:800}
+.how-lead{color:var(--muted);margin-top:10px;font-size:1.05rem}
+
+.process-wrap{position:relative;margin-top:36px;padding:24px 10px}
+.process-lines{position:absolute;left:0;right:0;top:44px;height:72px;pointer-events:none}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;align-items:start;position:relative;z-index:2}
+.process-step{display:flex}
+.step-shell{border:1px solid var(--border);border-radius:12px;padding:18px;background:#fff;box-shadow:0 6px 20px rgba(15,23,42,0.04);width:100%}
+.step-title{font-size:12px;color:var(--muted);font-weight:700;margin-bottom:10px}
+
+.phone-mock{border-radius:8px;border:1px solid var(--border);padding:10px;background:#fbfdfe}
+.phone-header{font-weight:700;color:#071033;font-size:13px;margin-bottom:8px}
+.phone-body{color:var(--muted);font-size:0.98rem}
+
+.ai-mock{border-radius:8px;border:1px solid var(--border);padding:10px;background:#fff}
+.ai-badge{display:inline-block;padding:6px 8px;border-radius:8px;border:1px solid var(--border);font-weight:700;font-size:12px;color:var(--muted);margin-bottom:8px}
+.ai-line{color:var(--muted)}
+
+.chat-mock{display:flex;flex-direction:column;gap:8px}
+.bubble{padding:8px 12px;border-radius:10px;border:1px solid var(--border);background:#fbfdfe;color:var(--muted);font-size:0.95rem}
+.bubble.outgoing{background:#fff}
+
+.appt-mock{display:flex;flex-direction:column;gap:6px}
+.appt-time{font-weight:800;color:#071033}
+.appt-status{color:var(--accent);font-weight:800}
+
+.how-transition{text-align:center;margin-top:28px;font-weight:700;color:#071033}
+
+@media (max-width:1000px){
+    .process-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media (max-width:640px){
+    .how-heading h2{font-size:20px}
+    .process-grid{grid-template-columns:1fr;gap:18px}
+    .process-wrap{padding:8px}
+    .process-lines{display:none}
+}
+
 /* Problem section styles */
 .problem-section{padding:68px 0;background:var(--bg)}
 .section-heading-centered{text-align:center;max-width:900px;margin:0 auto 28px}
