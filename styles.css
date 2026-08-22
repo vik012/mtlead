@@ -10,3 +10,67 @@ html, body {
 * { box-sizing: border-box; }
 
 /* Intentionally minimal — no site-specific styles, sections, or branding */
+
+:root{
+    --accent: #0f766e; /* restrained teal accent */
+    --muted: #6b7280;
+    --border: #e6eef2;
+    --bg: #ffffff;
+    --shadow: 0 8px 30px rgba(15,23,42,0.06);
+}
+
+body{font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; color:#0f1724}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* Header / navigation */
+.site-header{background:var(--bg);position:sticky;top:0;z-index:50;border-bottom:1px solid var(--border)}
+.header-row{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.brand{font-weight:800;font-size:1.125rem;letter-spacing:0.02em}
+.nav{display:flex;gap:18px;align-items:center}
+.nav-link{color:var(--muted);text-decoration:none;font-weight:600;padding:8px 10px;border-radius:8px}
+.nav-link:hover{color:var(--accent)}
+.nav-cta{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+.nav-ghost{padding:8px 12px;border-radius:8px;border:1px solid transparent;color:var(--muted)}
+.nav-primary{background:var(--accent);color:#fff;padding:8px 14px;border-radius:10px;font-weight:700}
+
+/* Hero */
+.hero{padding:80px 0 120px;background:var(--bg)}
+.hero-grid{display:grid;grid-template-columns:1fr 480px;gap:48px;align-items:center}
+.hero-left{max-width:640px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:0.18em;color:var(--muted);text-transform:uppercase;margin-bottom:18px}
+.headline{font-size:clamp(32px,5vw,56px);line-height:1.02;margin:0 0 18px;font-weight:800;color:#071033}
+.lede{color:var(--muted);font-size:1.0625rem;margin-bottom:26px;max-width:54ch}
+
+.actions{display:flex;gap:12px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 8px 24px rgba(15,118,110,0.10)}
+.btn-secondary{border:1px solid var(--border);color:#071033;background:#fff}
+
+/* Mockup */
+.mockup{width:100%;max-width:420px;border:1px solid var(--border);border-radius:14px;padding:14px;background:#fff;box-shadow:var(--shadow)}
+.call-header{display:flex;flex-direction:column;gap:6px;padding:6px 8px;border-bottom:1px solid var(--border)}
+.call-status{font-size:12px;color:var(--muted);font-weight:700}
+.caller{font-weight:700;color:#071033}
+
+.call-panel{padding:12px}
+.call-step{font-size:13px;color:var(--muted);font-weight:700;margin-bottom:10px}
+.conversation{display:grid;gap:10px;margin-bottom:12px}
+.bubble{max-width:80%;padding:10px 12px;border-radius:10px;font-size:0.95rem}
+.bubble.incoming{background:#f6f9fb;border:1px solid var(--border);align-self:start}
+.bubble.outgoing{background:#ffffff;border:1px solid var(--border);align-self:end;justify-self:end}
+
+.appointment{display:flex;align-items:center;justify-content:space-between;padding:10px;border-top:1px solid var(--border);gap:12px}
+.appt-left{display:flex;flex-direction:column}
+.appt-time{font-weight:700;color:#071033}
+.appt-with{font-size:13px;color:var(--muted)}
+.appt-right{color:var(--accent);font-weight:800}
+
+/* Responsive */
+@media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:32px}
+    .hero{padding:56px 0}
+    .mockup{max-width:100%}
+    .headline{font-size:28px}
+}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
