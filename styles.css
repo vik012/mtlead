@@ -118,6 +118,41 @@ body{font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, 
     .process-lines{display:none}
 }
 
+/* Capabilities section */
+.capabilities-section{padding:84px 0;background:var(--bg)}
+.cap-eyebrow{font-size:12px;font-weight:700;letter-spacing:0.18em;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+.cap-heading{max-width:980px;margin:0 auto 20px;text-align:center}
+.cap-heading h2{font-size:28px;margin:0;color:#071033;font-weight:800}
+.cap-lead{color:var(--muted);margin-top:10px;font-size:1.02rem}
+
+.cap-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:28px;align-items:start}
+.cap-feature{grid-row:span 2;border:1px solid var(--border);border-radius:12px;padding:22px;background:#fff;box-shadow:0 8px 30px rgba(15,23,42,0.04)}
+.cap-list{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.cap-card{border:1px solid var(--border);border-radius:10px;padding:16px;background:#fff;transition:transform 180ms ease,box-shadow 180ms ease}
+.cap-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.cap-title{font-size:13px;font-weight:800;color:#071033;margin-bottom:8px}
+.cap-copy{color:var(--muted);font-size:0.98rem;line-height:1.3}
+
+.cap-feature .cap-title{color:var(--accent)}
+.cap-feature .cap-copy{font-weight:700;margin-bottom:14px}
+.cap-ui{border:1px solid var(--border);padding:10px;border-radius:8px;background:#fbfdfe;max-width:240px}
+.cap-ui .ui-line{font-weight:800;color:#071033;margin-bottom:6px}
+.cap-ui .ui-sub{color:var(--muted);font-size:0.95rem}
+
+.cap-transition{text-align:center;margin-top:28px;font-weight:700;color:#071033}
+
+@media (max-width:1000px){
+    .cap-grid{grid-template-columns:1fr;gap:18px}
+    .cap-list{grid-template-columns:1fr 1fr}
+    .cap-feature{grid-row:auto}
+}
+
+@media (max-width:640px){
+    .cap-list{grid-template-columns:1fr}
+    .cap-ui{max-width:100%}
+    .capabilities-section{padding:40px 0}
+}
+
 /* Problem section styles */
 .problem-section{padding:68px 0;background:var(--bg)}
 .section-heading-centered{text-align:center;max-width:900px;margin:0 auto 28px}
