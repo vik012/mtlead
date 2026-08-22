@@ -74,3 +74,25 @@ body{font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, 
 }
 
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* Problem section styles */
+.problem-section{padding:68px 0;background:var(--bg)}
+.section-heading-centered{text-align:center;max-width:900px;margin:0 auto 28px}
+.section-heading-centered h2{font-size:28px;margin:0 0 12px;color:#071033;font-weight:800}
+.problem-lead{color:var(--muted);max-width:68ch;margin:0 auto;font-size:1.025rem}
+
+.problem-visual{position:relative;margin-top:32px;padding:28px 20px 10px}
+.problem-visual .connect-lines{position:absolute;inset:0;opacity:1;pointer-events:none}
+.situations-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;position:relative;z-index:2}
+.situation{background:transparent;border:1px solid var(--border);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.situation .icon{width:40px;height:40px;display:grid;place-items:center;color:var(--muted)}
+.situation h4{margin:0;font-size:13px;letter-spacing:0.08em;color:#071033}
+.situation p{margin:0;color:var(--muted);font-size:0.95rem}
+
+.problem-transition{margin-top:26px;text-align:center;font-weight:700;color:#071033;font-size:1.05rem}
+
+@media (max-width:900px){
+    .problem-section{padding:40px 0}
+    .situations-grid{grid-template-columns:1fr}
+    .section-heading-centered h2{font-size:22px}
+}
